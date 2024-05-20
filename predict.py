@@ -149,7 +149,7 @@ def get_res(results, image, image_path):
                 os.makedirs(save_dir, exist_ok=True)
                 cv2.imwrite(f'./{save_dir}/warped_image{num}.jpg', warped_image)
                 res = float(ISS.process_image(f'./{save_dir}/warped_image{num}.jpg', f'./{save_dir}/result{num}.jpg'))
-                path = [res, f'./{save_dir}/warped_image{num}.jpg', 'null' if res == -1 else f'{save_dir}/result{num}.jpg']
+                path = [res, f'{save_dir}/warped_image{num}.jpg', 'null' if res == -1 else f'{save_dir}/result{num}.jpg']
                 ress.append(path)
                 if res == -1:
                     colors.append((0, 255, 0))
